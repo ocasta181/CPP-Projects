@@ -14,20 +14,20 @@ find the sum of the even-valued terms.
 
 int main(){
 
-	int last = 1;
-	int current = 1;
+    int last = 1;
+    int current = 1;
 
-	int sum = 0;
+    int sum = 0;
 
-	while (current < 4000000){
-		if (current % 2 == 0){
-			sum += current;
-		}
+    while (current < 4000000){
+        if (current % 2 == 0){
+            sum += current;
+        }
 
-		int temp = current;
-		current += last;
-		last = temp;
-	}
+        int temp = current;
+        current += last;
+        last = temp;
+    }
 
-	std::cout << sum << std::endl;
+    std::cout << sum << std::endl;
 }

@@ -13,7 +13,7 @@ struct Point {
 };
 
 struct Node {
-	Point _point;
+    Point _point;
     std::unique_ptr<Node> _parent;
     std::unique_ptr<Node> _startNode;
     std::unique_ptr<Node> _endNode;
@@ -21,7 +21,7 @@ struct Node {
     int _hCost;
     int _fCost;
 
-	Node(   const Point point, 
+    Node(   const Point point, 
             const std::unique_ptr<Node> &parent, 
             const std::unique_ptr<Node> &startNode, 
             const std::unique_ptr<Node> &endNode);

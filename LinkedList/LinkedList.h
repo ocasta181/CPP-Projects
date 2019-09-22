@@ -4,20 +4,20 @@
 #include <memory>
 
 struct Node {
-	const int _value;
-	std::unique_ptr<Node> _next;
+    const int _value;
+    std::unique_ptr<Node> _next;
 
-	Node(int value);
+    Node(int value);
 };
 
 class LinkedList {
-	std::unique_ptr<Node> _root;
+    std::unique_ptr<Node> _root;
 
 public:
-	LinkedList();
-	LinkedList(const int value);
-	void insert(const int value);
-	bool find(const int value);
+    LinkedList();
+    LinkedList(const int value);
+    void insert(const int value);
+    bool find(const int value);
 };
 
 #endif // LINKEDLIST_H

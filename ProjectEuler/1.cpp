@@ -11,17 +11,17 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 int main(){
 
-	int sum = 0;
+    int sum = 0;
 
-	for (int x = 3; x < 1000; x++){
-		if (x % 3 == 0) {
-			sum += x;
-		}
-		else if (x % 5 == 0) {
-			sum += x;
-		}
-	}
+    for (int x = 3; x < 1000; x++){
+        if (x % 3 == 0) {
+            sum += x;
+        }
+        else if (x % 5 == 0) {
+            sum += x;
+        }
+    }
 
-	std::cout << sum << std::endl;
+    std::cout << sum << std::endl;
 
 }

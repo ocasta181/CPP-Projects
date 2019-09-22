@@ -9,24 +9,24 @@ What is the largest prime factor of the number 600851475143?
 #include <cmath>
 
 int main(){
-	long int n = 600851475143;
-	int largest = 0;
-	while (n % 2 == 0){
-		n = n/2;
-		largest = 2;
-	}
-	std::cout << largest << "\n";
+    long int n = 600851475143;
+    int largest = 0;
+    while (n % 2 == 0){
+        n = n/2;
+        largest = 2;
+    }
+    std::cout << largest << "\n";
 
-	for (int i = 3; i <= n; i += 2){
-		while (n % i == 0){
-			n = n/i;
-			if (largest < i){
-				std::cout << largest << "\n";
-			}
-			largest = i;
-		}
-		
-	}
+    for (int i = 3; i <= n; i += 2){
+        while (n % i == 0){
+            n = n/i;
+            if (largest < i){
+                std::cout << largest << "\n";
+            }
+            largest = i;
+        }
+        
+    }
 
-	std::cout << largest << std::endl;
+    std::cout << largest << std::endl;
 }
