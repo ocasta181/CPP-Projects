@@ -21,17 +21,17 @@ struct Node {
     int _hCost;
     int _fCost;
 
-    Node(   const Point point, 
-            const std::unique_ptr<Node> &parent, 
-            const std::unique_ptr<Node> &startNode, 
-            const std::unique_ptr<Node> &endNode);
+    Node(   const   Point point, 
+            const   std::unique_ptr<Node> &parent, 
+            const   std::unique_ptr<Node> &startNode, 
+            const   std::unique_ptr<Node> &endNode);
 
     void setCosts(  std::unique_ptr<Node> &startNode, 
                     std::unique_ptr<Node> &endNode);
 
-    void set_gCost(std::unique_ptr<Node> &startNode);
+    void set_gCost( std::unique_ptr<Node> &startNode);
 
-    void set_hCost(std::unique_ptr<Node> &endNode);
+    void set_hCost( std::unique_ptr<Node> &endNode);
 
     void set_fCost();
 };

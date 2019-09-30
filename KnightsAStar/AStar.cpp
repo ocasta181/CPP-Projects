@@ -87,7 +87,8 @@ std::vector<Node> findChildren( std::unique_ptr<Node> &parent,
         }
         Node tempNode = Node::Node(links[i], parent, startNode, endNode);
         
-        for (auto o : Open) {
+        for (int j = 0; j <= Open.size(); j++) { //auto o : Open) {
+            Node o = Open[j];
             if (tempNode._point == o._point) {
                 if (tempNode._hCost >= o._hCost) {
                     links.erase(links.begin() + i);
@@ -95,7 +96,7 @@ std::vector<Node> findChildren( std::unique_ptr<Node> &parent,
                     break;
                 }
                 else {
-                    // Open.remove(o)
+                    Open.erase(Open.begin() + j); //remove(o)
                 }
             }
         }
