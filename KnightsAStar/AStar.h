@@ -9,31 +9,41 @@ struct Point {
 
     Point(int x, int y);
 
-    bool Point::operator==(const Point &left, const Point &right);
+    bool operator==(const Point &right);
 };
 
 struct Node {
-    Point _point;
-    std::unique_ptr<Node> _parent;
-    std::unique_ptr<Node> _startNode;
-    std::unique_ptr<Node> _endNode;
+    std::shared_ptr<Point> _point;
+    std::shared_ptr<Node> _parent;
+    std::shared_ptr<Node> _startNode;
+    std::shared_ptr<Node> _endNode;
     int _gCost;
     int _hCost;
     int _fCost;
 
-    Node(   const   Point point, 
-            const   std::unique_ptr<Node> &parent, 
-            const   std::unique_ptr<Node> &startNode, 
-            const   std::unique_ptr<Node> &endNode);
+    Node(const std::shared_ptr<Point> &point);
 
-    void setCosts(  std::unique_ptr<Node> &startNode, 
-                    std::unique_ptr<Node> &endNode);
+    Node(const std::shared_ptr<Point> &point, 
+         std::shared_ptr<Node> &parent, 
+         std::shared_ptr<Node> &startNode, 
+         std::shared_ptr<Node> &endNode);
 
-    void set_gCost( std::unique_ptr<Node> &startNode);
+    void setCosts(  std::shared_ptr<Node> &startNode, 
+                    std::shared_ptr<Node> &endNode);
 
-    void set_hCost( std::unique_ptr<Node> &endNode);
+    void set_gCost( std::shared_ptr<Node> &startNode);
+
+    void set_hCost( std::shared_ptr<Node> &endNode);
 
     void set_fCost();
 };
+
+std::vector<std::vector<std::shared_ptr<Node>>> findChildren( std::shared_ptr<Node> &parent,
+                                std::shared_ptr<Node> &startNode,
+                                std::shared_ptr<Node> &endNode,
+                                std::vector<Node> Closed,
+                                std::vector<Node> Open);
+
+void AStar( std::unique_ptr<Point> &start, std::unique_ptr<Point> &end);
 
 #endif //ASTAR_H
