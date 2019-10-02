@@ -181,9 +181,9 @@ void AVL::simpleFlip(std::unique_ptr<Node> &side, std::unique_ptr<Node> &new_bas
 template<AVL::Dir parentType>
 void AVL::complexFlip(std::unique_ptr<Node> &side, std::unique_ptr<Node> &new_base) {
 
-    AVL::accessSecond<parentType>(AVL::accessFirst<parentType>(side))   = AVL::accessFirst<parentType>(new_base);
-    AVL::accessFirst<parentType>(new_base) 							= AVL::accessFirst<parentType>(side);
-    AVL::accessFirst<parentType>(side) 								= AVL::accessSecond<parentType>(new_base);
+    AVL::accessSecond<parentType>(AVL::accessFirst<parentType>(side))   = AVL::accessFirst< parentType>(new_base);
+    AVL::accessFirst< parentType>(new_base) 							= AVL::accessFirst< parentType>(side);
+    AVL::accessFirst< parentType>(side) 								= AVL::accessSecond<parentType>(new_base);
     AVL::accessSecond<parentType>(new_base) 							= side;
 }
 
