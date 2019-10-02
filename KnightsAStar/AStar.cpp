@@ -115,12 +115,10 @@ std::vector<std::vector<std::shared_ptr<Node>>> findChildren(
     }
     std::vector<std::vector<std::shared_ptr<Node>>> children;
     children.push_back(Open);
-    // std::vector<std::shared_ptr<Node>> tmp;
     for (auto & link : links) {
         children[0].push_back(std::make_shared<Node>(Node(link, parent, startNode, endNode)));
     }
-    // children[0].push_back(tmp);
-    children.push_back(Closed); //children.end(), std::begin(Closed), std::end(Closed));
+    children.push_back(Closed);
 
     return children;
 }
@@ -167,5 +165,4 @@ int main(){
     std::shared_ptr<Point> end = std::make_shared<Point>(Point(8, 3));
 
     AStar(start, end);
-
 }
