@@ -54,6 +54,12 @@ bool test_replace(std::string base, std::vector<int> to_replace) {
 }
 
 
+int r_build_replace(int depth, std::string substr){
+    for(int i = 0; i <= substr.length; i++){
+        r_build_replace(depth-1; )
+    }
+}
+
 int main (){
     int base = 56003;
     bool solved = false;
